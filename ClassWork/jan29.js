@@ -74,7 +74,7 @@ author: 'F. Scott Fitzgerald',
 yearPublished: 1925
 };
 
-const {author, title} = book;
+const {title, author, yearPublished} = book;
 console.log(title + " by " + author);
 
 const profile = {

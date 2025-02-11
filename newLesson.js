@@ -140,3 +140,116 @@ do{
 console.log(numberr[index])
 index++;
 }while(index < numberr.length);
+
+/"""this is an example of function declaration"""/
+
+console.log(getName());
+function getName(){
+return "gloria"
+};
+
+/"""this is an example of function expression"""/
+
+const greet = function(){
+return "Morning"
+}
+
+console.log(greet());
+
+function assertEquals(){
+	
+	function getMen(){
+		let numberOfMen = "23";
+		return numberOfMen
+	};
+
+	function getLadies(){
+		let numberOfLadies = 23;
+		return numberOfLadies
+	};
+	
+	return getMen() == getLadies()
+}
+
+console.log(assertEquals());
+
+/*=== compares the type and values. while == compares only values*/
+
+
+/*next is arrow function type*/
+
+function assertEquals(){
+	
+	const getMen = () =>{
+		let numberOfMen = 26
+		return numberOfMen
+	};
+
+	function getLadies(){
+		let numberOfLadies = 23;
+		return numberOfLadies
+	};
+	
+	return getMen() === getLadies()
+}
+
+console.log(assertEquals());
+
+/*next is function returned as an object* let count ={ increment: function, decrement: function, getValue: function}*/
+
+function counter(){
+	let value = 0;
+	return{
+		increment: function(){
+			return value++
+			},
+		decrement: ()=>{
+			return value--
+			},
+		getValue: function(){
+			return value
+		}
+
+	}
+
+};
+
+let counts = counter()
+counts.increment()
+counts.increment()
+console.log(counts.getValue());
+
+/*Function as an argument. 
+Function as an argument can also be called a call-back function. A function takes in the code inside a function, executes it and returns the function.
+*/
+
+let name = "Gloria"
+
+function greeter(name){
+return `Hello ${name}`
+}
+
+function executeFunction(callBack, userName){
+	return callBack(userName)
+}
+
+let results = executeFunction(greeter, name)
+console.log(results)
+
+function counting(){
+let value = 0
+
+
+  function increaseValueByTwo(){
+    let result = value + 2
+    console.log(result)
+    console.log(value)
+  }
+  increaseValueByTwo()
+}
+
+counting()
+
+
+
+module.exports = getDoubledNumbers;
