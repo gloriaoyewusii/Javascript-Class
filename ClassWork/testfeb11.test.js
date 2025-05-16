@@ -44,3 +44,7 @@ test ('check balance', () =>{
     expect(result).toBe(answer);
 });
 
+// test('check fruit name and quantity', ()=>{
+//     let result = getInventory();
+//     let answer = 
+// })

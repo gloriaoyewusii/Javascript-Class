@@ -51,4 +51,61 @@ const getEvenNumbers = (arrayOfNumbers)=>{
   });
   return evenNumbers;
 }
-module.exports = {multiply, addTwoNumbers, divide, getOddNumbers, getOddNumberz, getDoubledNumbers, getEvenNumbers};
+
+function addThreeToEachElement(array){
+  let result = array.map((number, index)=>(number + index))
+  return result;
+};
+//Feb 12 class 
+
+function addOneToLastElement(numbersArray){
+  let newArray = [];
+  let joinedNumbers = Number(numbersArray.join(''));
+  joinedNumbers += 1;
+  let stringNumber = String(joinedNumbers);
+  for (let index of stringNumber)
+    newArray.push(Number(index));
+    return newArray;
+}
+
+const isOdd = (number)=>{
+  let answer = number % 2 != 0;
+  return answer;
+}
+
+function getOddNumbersz(array){
+  return array.filter(isOdd)
+  // This is the same as the filter function above
+  // return array.filter((number)=> number % 2 != 0)
+}
+
+// const isGreater = (word)=>{
+//   let answer = word.length > 4;
+//   return answer;
+// }
+
+function isGreater(word){
+  let answer = word.length > 4;
+  return answer;
+}
+const getWordsGreaterThanFourLetters = (arrayOfWords)=>{
+  return arrayOfWords.filter(isGreater);
+  // return arrayOfWords.filter((word)=>word.length > 4);
+}
+
+// const ageIsGreater = (student)=>{
+//   let students = {};
+//   if (students[age] > 20)
+//     return age;
+// }
+
+function getStudents(students){
+  return students.filter((student)=> student.age > 20);
+}
+module.exports = {
+  multiply, addTwoNumbers,
+  divide, getOddNumbers,
+  getOddNumberz, getDoubledNumbers, 
+  getEvenNumbers, addThreeToEachElement, 
+  addOneToLastElement, getOddNumbersz, 
+  getWordsGreaterThanFourLetters, getStudents};
